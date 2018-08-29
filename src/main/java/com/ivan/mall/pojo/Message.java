@@ -12,24 +12,24 @@ public class Message {
 	private int code;// 0--成功;-1--失败
 	// 返回数据信息
 	private String msg;
-	//数据总数
+	//数据总数,在分页时返回数据总数
 	private long count;
-	// 返回数据
+	// 返回数据,在分页时返回数据详情
 	private Object data;
 
 	// 操作成功
 	public static Message success() {
 		Message result = new Message();
 		result.setCode(0);// 0--成功
-		result.setMsg("操作成功");
+		result.setMsg("操作成功...");
 		return result;
 	}
 
 	// 操作失败
-	public static Message error(String errInfo) {
+	public static Message error() {
 		Message result = new Message();
 		result.setCode(-1);// -1--失败
-		result.setMsg("操作失败");
+		result.setMsg("操作失败...");
 		return result;
 	}
 
