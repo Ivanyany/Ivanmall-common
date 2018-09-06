@@ -12,7 +12,7 @@ public class Message {
 	private int code;// 0--成功;-1--失败
 	// 返回数据信息
 	private String msg;
-	//数据总数,在分页时返回数据总数
+	// 数据总数,在分页时返回数据总数
 	private long count;
 	// 返回数据,在分页时返回数据详情
 	private Object data;
@@ -30,6 +30,14 @@ public class Message {
 		Message result = new Message();
 		result.setCode(-1);// -1--失败
 		result.setMsg("操作失败...");
+		return result;
+	}
+	
+	//自定义Message
+	public static Message build(int code, String msg) {
+		Message result = new Message();
+		result.setCode(code);//返回的状态码
+		result.setMsg(msg);//返回的消息
 		return result;
 	}
 
